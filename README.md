@@ -1,11 +1,11 @@
 # api-demo
 
-Pre-requisites
+Pre-requisites:
 Below packages must be configured to execute this project:
 - Terraform
 - Ansible
 
-Execution Process
+Execution Process:
 Update VPC and subnet details in vars.tf file respective to your aws environment and run below commands:
 - terraform init
 - terraform plan

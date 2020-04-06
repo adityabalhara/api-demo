@@ -13,7 +13,7 @@
       - php-mysqli
     - name: Copy PHP Code
       copy:
-        src: PHP/timestamp.php
+        src: timestamp.php
         dest: /usr/share/nginx/html/timestamp.php
     - name: Start Service
       service: name=nginx state=started enabled=yes

@@ -1,0 +1,19 @@
+-
+  name: Deploy Web Server
+  hosts: Web
+  become: yes
+  remote_user: ec2-user
+  tasks:
+    - name: Install Nginx
+      yum: name={{ item }} state=present
+      with_items:
+      - nginx
+      - php
+      - php-fpm
+      - php-mysqli
+    - name: Copy PHP Code
+      copy:
+        src: PHP/timestamp.php
+        dest: /usr/share/nginx/html/timestamp.php
+    - name: Start Service
+      service: name=nginx state=started enabled=yes
